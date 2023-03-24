@@ -1,3 +1,4 @@
+![Example](https://i.imgur.com/zN6AxOx.png)
 # Installation
 - clone the repo
 - run `npm install`
