@@ -1,0 +1,17 @@
+{
+  "name": "chatgpt",
+  "version": "1.0.0",
+  "description": "ChatGPT via command line terminal",
+  "type": "module",
+  "main": "script.js",
+  "scripts": {
+    "start": "node script.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "openai": "^3.2.1"
+  }
+}
