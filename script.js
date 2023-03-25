@@ -24,6 +24,7 @@ const colors = {
   lightcyan: `\x1b[96m`,
 }
 const color = colors.lightcyan
+const helpText = `\nhelp --- show commands\nclear -- clear log\n`
 
 const openai = new OpenAIApi(
 	new Configuration({
@@ -38,14 +39,20 @@ const userInterface = readline.createInterface({
 
 // Custom message
 const beginConversation = () => {
-	console.log('You are now communicating with ChatGPT using gpt-3.5-turbo')
-	console.log('Type clear to wipe the log \n')
+	console.log('Starting a conversation with ChatGPT using gpt-3.5-turbo')
+	console.log('Type "help" to view commands\n\n')
 	userInterface.prompt()
 }
 
 beginConversation()
 userInterface.on('line', async (input) => {
 	// Put special case inputs here like 'help' or 'version'
+  // Print help
+  if (input == 'help') {
+    console.log(helpText)
+    return userInterface.prompt()
+  }
+  
   // Clear the shell
 	if (input == 'clear') {
 		console.clear()
@@ -56,6 +63,6 @@ userInterface.on('line', async (input) => {
 		model: model,
 		messages: [{ role: 'user', content: input }],
 	})
-	console.log(`\n>>${color}`, res.data.choices[0].message.content, `\x1b[0m\n`)
+	console.log(`\n${color}>>`, res.data.choices[0].message.content, `\x1b[0m\n`)
 	userInterface.prompt()
 })
