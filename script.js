@@ -7,21 +7,21 @@ config()
 process.title = 'ChatGPT'
 const model = 'gpt-3.5-turbo'
 const colors = {
-  red: `\x1b[31m`,
-  green: `\x1b[32m`,
-  yellow: `\x1b[33m`,
-  blue: `\x1b[34m`,
-  magenta: `\x1b[35m`,
-  cyan: `\x1b[36m`,
-  white: `\x1b[37m`,
-  default: `\x1b[39m`,
+	red: `\x1b[31m`,
+	green: `\x1b[32m`,
+	yellow: `\x1b[33m`,
+	blue: `\x1b[34m`,
+	magenta: `\x1b[35m`,
+	cyan: `\x1b[36m`,
+	white: `\x1b[37m`,
+	default: `\x1b[39m`,
 
-  lightred: `\x1b[91m`,
-  lightgreen: `\x1b[92m`,
-  lightyellow: `\x1b[93m`,
-  lightblue: `\x1b[94m`,
-  lightmagenta: `\x1b[95m`,
-  lightcyan: `\x1b[96m`,
+	lightred: `\x1b[91m`,
+	lightgreen: `\x1b[92m`,
+	lightyellow: `\x1b[93m`,
+	lightblue: `\x1b[94m`,
+	lightmagenta: `\x1b[95m`,
+	lightcyan: `\x1b[96m`,
 }
 const color = colors.lightcyan
 const helpText = `\nhelp --- show commands\nclear -- clear log\n`
@@ -46,14 +46,14 @@ const beginConversation = () => {
 
 beginConversation()
 userInterface.on('line', async (input) => {
-	// Put special case inputs here like 'help' or 'version'
+  // Put special case inputs here like 'help' or 'version'
   // Print help
   if (input == 'help') {
-    console.log(helpText)
-    return userInterface.prompt()
-  }
-  
-  // Clear the shell
+		console.log(helpText)
+		return userInterface.prompt()
+	}
+
+	// Clear the shell
 	if (input == 'clear') {
 		console.clear()
 		return beginConversation()
