@@ -46,9 +46,9 @@ const beginConversation = () => {
 
 beginConversation()
 userInterface.on('line', async (input) => {
-  // Put special case inputs here like 'help' or 'version'
-  // Print help
-  if (input == 'help') {
+	// Put special case inputs here like 'help' or 'version'
+	// Print help
+	if (input == 'help') {
 		console.log(helpText)
 		return userInterface.prompt()
 	}
